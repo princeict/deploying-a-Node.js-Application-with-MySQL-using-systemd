@@ -1,6 +1,6 @@
 # Deploying a Node.js Application with MySQL using systemd
 
-## Part 2: Database Setup
+## Part 1: Database Setup
 
 ### 1. Install MySQL if Not Already Installed
 ```sh
