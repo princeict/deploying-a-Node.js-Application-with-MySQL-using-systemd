@@ -2,7 +2,7 @@
 
 ## Part 1: Database Setup
 
-### 1. Install MySQL
+### 1. Install MySQL if Not Already Installed
 ```sh
 sudo apt update
 sudo apt install mysql-server -y
@@ -15,19 +15,15 @@ sudo systemctl start mysql
 sudo mysql_secure_installation
 ```
 
-### 3. Create the Required Database, User, and Table
+### 3. Secure MySQL Connection
 Access MySQL:
 ```sh
 sudo mysql
 ```
-Run the following SQL commands:
+Run the following SQL command:
 ```sql
-CREATE DATABASE practice_app;
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL
-);
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Prince@2025';
+FLUSH PRIVILEGES;
 ```
 
 ### 4. Add Sample Data to the Table
