@@ -1,6 +1,46 @@
 # Deploying a Node.js Application with MySQL using systemd
 
-## Part 1: Application Setup
+## Part 2: Database Setup
+
+### 1. Install MySQL if Not Already Installed
+```sh
+sudo apt update
+sudo apt install mysql-server -y
+sudo systemctl status mysql
+sudo systemctl start mysql
+```
+
+### 2. Secure the MySQL Installation
+```sh
+sudo mysql_secure_installation
+```
+
+### 3. Create the Required Database, User, and Table
+Access MySQL:
+```sh
+sudo mysql
+```
+Run the following SQL commands:
+```sql
+CREATE DATABASE practice_app;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+```
+
+### 4. Add Sample Data to the Table
+```sql
+INSERT INTO users (name, email) VALUES ('Kabir Khan', 'kabir22@gmail.com');
+INSERT INTO users (name, email) VALUES ('Jamil Rahman', 'jamil54@gmail.com');
+INSERT INTO users (name, email) VALUES ('Polash Ahmed', 'polash89@gmail.com');
+INSERT INTO users (name, email) VALUES ('Rakib Ahmed', 'rakib33@gmail.com');
+```
+
+---
+
+## Part 2: Application Setup
 
 ### 1. Create a Node.js Project Directory and Initialize It with npm
 ```sh
@@ -58,46 +98,6 @@ app.get('/users', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
-```
-
----
-
-## Part 2: Database Setup
-
-### 1. Install MySQL if Not Already Installed
-```sh
-sudo apt update
-sudo apt install mysql-server -y
-sudo systemctl status mysql
-sudo systemctl start mysql
-```
-
-### 2. Secure the MySQL Installation
-```sh
-sudo mysql_secure_installation
-```
-
-### 3. Create the Required Database, User, and Table
-Access MySQL:
-```sh
-sudo mysql
-```
-Run the following SQL commands:
-```sql
-CREATE DATABASE practice_app;
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL
-);
-```
-
-### 4. Add Sample Data to the Table
-```sql
-INSERT INTO users (name, email) VALUES ('Kabir Khan', 'kabir22@gmail.com');
-INSERT INTO users (name, email) VALUES ('Jamil Rahman', 'jamil54@gmail.com');
-INSERT INTO users (name, email) VALUES ('Polash Ahmed', 'polash89@gmail.com');
-INSERT INTO users (name, email) VALUES ('Rakib Ahmed', 'rakib33@gmail.com');
 ```
 
 ---
