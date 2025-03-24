@@ -2,7 +2,7 @@
 
 ## Part 1: Database Setup
 
-### 1. Install MySQL if Not Already Installed
+### 1. Install MySQL
 ```sh
 sudo apt update
 sudo apt install mysql-server -y
