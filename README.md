@@ -2,7 +2,7 @@
 
 ## Part 1: Database Setup
 
-### 1. Install MySQL if Not Already Installed
+### 1. Install MySQL
 ```sh
 sudo apt update
 sudo apt install mysql-server -y
@@ -22,7 +22,7 @@ sudo mysql
 ```
 Run the following SQL command:
 ```sql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Prince@2025';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_new_pssword';
 FLUSH PRIVILEGES;
 ```
 
