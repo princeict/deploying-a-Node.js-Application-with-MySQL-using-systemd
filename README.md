@@ -2,6 +2,12 @@
 
 ## Part 1: Database Setup
 
+### 0. Check if MySQL is Installed
+```sh
+mysql --version
+```
+If MySQL is not installed, proceed with the installation steps below.
+
 ### 1. Install MySQL
 ```sh
 sudo apt update
