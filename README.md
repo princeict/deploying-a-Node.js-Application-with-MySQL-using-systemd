@@ -13,10 +13,9 @@ If MySQL is not installed, proceed with the installation steps below.
 sudo apt update
 sudo apt install mysql-server -y
 ```
-### 2. Start & Enable MySQL Service
+### 2. Start MySQL 
 ```sh
 sudo systemctl start mysql  
-sudo systemctl enable mysql
 ```
 
 ### 3. Secure MySQL Installation
