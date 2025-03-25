@@ -6,12 +6,10 @@
 ```sh
 sudo apt update
 sudo apt install mysql-server -y
-sudo systemctl status mysql
-sudo systemctl start mysql
 ```
 ### 2. Start & Enable MySQL Service
 ```sh
-sudo systemctl start mysql
+sudo systemctl start mysql  
 sudo systemctl enable mysql
 ```
 
@@ -35,14 +33,13 @@ FLUSH PRIVILEGES;
 
 ---
 
-## 📌 Create a Database & Table
-### 1️⃣ Create a New Database
+### 5. Create a New Database
 ```sql
 CREATE DATABASE practice_app;
 USE practice_app;
 ```
 
-### 2️⃣ Create a Users Table
+### 6. Create a Users Table
 ```sql
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -51,7 +48,7 @@ CREATE TABLE users (
 );
 ```
 
-### 3️⃣ Insert Sample Data
+### 7. Insert Sample Data
 ```sql
 INSERT INTO users (name, email) VALUES ('Sami Khan', 'sami34@gmail.com');
 INSERT INTO users (name, email) VALUES ('Piyal Rahman', 'piyalbd@gmail.com');
