@@ -246,7 +246,12 @@ sudo systemctl status nodejs-app
 sudo systemctl enable nodejs-app
 ```
 
-### 6. Stop Any Running Node.js Server
+### 6. check logs
+```sh
+sudo journalctl -u nodejs-app -f
+```
+
+### 7. Stop Any Running Node.js Server
 ```sh
 sudo kill $(pgrep -f server.js)
 ```
@@ -259,7 +264,7 @@ systemctl status nodejs-app
 ```
 
 ### 2. Test That Your Application Endpoints Work Correctly
-### 1️⃣ Get All Users
+### 1. Get All Users
 ```sh
 curl --location --request GET 'http://localhost:3000/users'
 ```
@@ -273,7 +278,7 @@ curl --location --request GET 'http://localhost:3000/users'
 ]
 ```
 
-### 2️⃣ Health Check
+### 2. Health Check
 ```sh
 curl --location --request GET 'http://localhost:3000/health'
 ```
