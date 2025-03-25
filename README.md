@@ -251,3 +251,28 @@ sudo systemctl enable nodejs-app
 sudo kill $(pgrep -f server.js)
 ```
 
+## Part 4: Testing
+
+### 1. Start Your Service and Verify It's Running
+```sh
+systemctl status your-service-name
+```
+
+### 2. Test That Your Application Endpoints Work Correctly
+Use the `curl` commands in the API Endpoints section to verify responses.
+
+### 3.Test That Your Service Restarts if the Application Crashes
+Stop the application manually and check if it restarts automatically.
+```sh
+systemctl stop your-service-name
+systemctl status your-service-name
+# Wait a moment and check if it restarts
+```
+
+### 4. Reboot Your System and Verify the Service Starts Automatically
+```sh
+sudo reboot
+# After reboot
+systemctl status your-service-name
+```
+
