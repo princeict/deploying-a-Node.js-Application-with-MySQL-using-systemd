@@ -9,32 +9,58 @@ sudo apt install mysql-server -y
 sudo systemctl status mysql
 sudo systemctl start mysql
 ```
+### 2. Start & Enable MySQL Service
+```sh
+sudo systemctl start mysql
+sudo systemctl enable mysql
+```
 
-### 2. Secure the MySQL Installation
+### 3. Secure MySQL Installation
+Run the MySQL secure installation script:
 ```sh
 sudo mysql_secure_installation
 ```
+- Choose **Yes (Y)** for password validation policy setup.
+- Remove **anonymous users**.
+- Disallow **remote root login**.
+- Remove **test database**.
+- Reload privilege tables.
 
-### 3. Secure MySQL Connection
-Access MySQL:
+### 4. Set Root Password & Authentication Method
 ```sh
-sudo mysql
-```
-Run the following SQL command:
-```sql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_new_pssword';
+sudo mysql -u root -p
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourSecurePassword';
 FLUSH PRIVILEGES;
 ```
 
-### 4. Add Sample Data to the Table
+---
+
+## 📌 Create a Database & Table
+### 1️⃣ Create a New Database
 ```sql
-INSERT INTO users (name, email) VALUES ('Kabir Khan', 'kabir22@gmail.com');
-INSERT INTO users (name, email) VALUES ('Jamil Rahman', 'jamil54@gmail.com');
-INSERT INTO users (name, email) VALUES ('Polash Ahmed', 'polash89@gmail.com');
-INSERT INTO users (name, email) VALUES ('Rakib Ahmed', 'rakib33@gmail.com');
+CREATE DATABASE practice_app;
+USE practice_app;
+```
+
+### 2️⃣ Create a Users Table
+```sql
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+```
+
+### 3️⃣ Insert Sample Data
+```sql
+INSERT INTO users (name, email) VALUES ('Sami Khan', 'sami34@gmail.com');
+INSERT INTO users (name, email) VALUES ('Piyal Rahman', 'piyalbd@gmail.com');
+INSERT INTO users (name, email) VALUES ('Kabir Ahmed', 'kabir_it@gmail.com');
+INSERT INTO users (name, email) VALUES ('Fahim Ahmed', 'fahim33@gmail.com');
 ```
 
 ---
+
 
 ## Part 2: Application Setup
 
