@@ -61,7 +61,10 @@ INSERT INTO users (name, email) VALUES ('Piyal Rahman', 'piyalbd@gmail.com');
 INSERT INTO users (name, email) VALUES ('Kabir Ahmed', 'kabir_it@gmail.com');
 INSERT INTO users (name, email) VALUES ('Fahim Ahmed', 'fahim33@gmail.com');
 ```
-
+### 8. Enable MySQL to Start on Boot
+```sh
+sudo systemctl enable mysql
+```
 ---
 
 
@@ -148,7 +151,7 @@ sudo vim /root/code/script/check-mysql.sh
 Add the following content:
 ```sh
 #!/bin/bash
-DB_HOST="$DB_PRIVATE_IP"
+DB_HOST=localhost
 DB_PORT=3306
 MAX_RETRIES=30
 RETRY_INTERVAL=10
