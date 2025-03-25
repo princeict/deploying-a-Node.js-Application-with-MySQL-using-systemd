@@ -264,7 +264,7 @@ systemctl status nodejs-app
 ```
 
 ### 2. Test That Your Application Endpoints Work Correctly
-### 1. Get All Users
+Get All Users
 ```sh
 curl --location --request GET 'http://localhost:3000/users'
 ```
@@ -278,7 +278,7 @@ curl --location --request GET 'http://localhost:3000/users'
 ]
 ```
 
-### 2. Health Check
+Health Check
 ```sh
 curl --location --request GET 'http://localhost:3000/health'
 ```
