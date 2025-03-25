@@ -255,17 +255,40 @@ sudo kill $(pgrep -f server.js)
 
 ### 1. Start Your Service and Verify It's Running
 ```sh
-systemctl status your-service-name
+systemctl status nodejs-app
 ```
 
 ### 2. Test That Your Application Endpoints Work Correctly
-Use the `curl` commands in the API Endpoints section to verify responses.
+### 1️⃣ Get All Users
+```sh
+curl --location --request GET 'http://localhost:3000/users'
+```
+**Response:**
+```json
+[
+  {"id":1,"name":"Sami Khan","email":"sami34@gmail.com"},
+  {"id":2,"name":"Piyal Rahman","email":"piyalbd@gmail.com"},
+  {"id":3,"name":"Kabir Ahmed","email":"kabir_it@gmail.com"},
+  {"id":4,"name":"Fahim Ahmed","email":"fahim33@gmail.com"}
+]
+```
+
+### 2️⃣ Health Check
+```sh
+curl --location --request GET 'http://localhost:3000/health'
+```
+**Response:**
+```sh
+Database Connection Successfully Established.
+```
+
+---
 
 ### 3.Test That Your Service Restarts if the Application Crashes
 Stop the application manually and check if it restarts automatically.
 ```sh
-systemctl stop your-service-name
-systemctl status your-service-name
+systemctl stop nodejs-app
+systemctl status nodejs-app
 # Wait a moment and check if it restarts
 ```
 
@@ -273,6 +296,6 @@ systemctl status your-service-name
 ```sh
 sudo reboot
 # After reboot
-systemctl status your-service-name
+systemctl status nodejs-app
 ```
 
