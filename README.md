@@ -32,7 +32,7 @@ sudo mysql_secure_installation
 ### 4. Set Root Password & Authentication Method
 ```sh
 sudo mysql -u root -p
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourSecurePassword';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourSecurePassword'; #Poridhi@2025
 FLUSH PRIVILEGES;
 ```
 
@@ -249,11 +249,6 @@ sudo systemctl enable nodejs-app
 ### 6. check logs
 ```sh
 sudo journalctl -u nodejs-app -f
-```
-
-### 7. Stop Any Running Node.js Server
-```sh
-sudo kill $(pgrep -f server.js)
 ```
 
 ## Part 4: Testing
